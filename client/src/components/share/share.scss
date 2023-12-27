@@ -1,0 +1,97 @@
+@import "../../style.scss";
+
+.share {
+  background-color: rgb(228, 222, 222);
+  font-family: Manrope;
+  .shareContainer {
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    margin: 1rem;
+
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      input {
+        border: none;
+        outline: none;
+        padding: 1rem 0.5rem;
+        background-color: transparent;
+        width: 60%;
+      }
+
+      input::placeholder {
+        font-family: Manrope;
+      }
+    }
+
+    hr {
+      margin: 1rem 0;
+      border: none;
+      height: 0.5px;
+      background-color: lightgray;
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          cursor: pointer;
+
+          img {
+            height: 1rem;
+          }
+
+          span {
+            font-size: 1rem;
+            color: gray;
+          }
+        }
+      }
+      .right {
+        button {
+          border: none;
+          padding: 0.5rem;
+          color: white;
+          cursor: pointer;
+          background-color: #5271ff;
+          border-radius: 0.2rem;
+          font-family: Manrope;
+        }
+      }
+    }
+  }
+}
+
+.dark #share {
+  background-color: rgb(83, 83, 83);
+}
+
+.dark .shareContainer {
+  background-color: rgb(70, 69, 69);
+}
+
+.dark #white {
+  color: white;
+}
+
+.dark #white::placeholder {
+  color: white;
+}

@@ -1,0 +1,211 @@
+.rightBar {
+  background-color: rgb(228, 222, 222);
+  width: 100%;
+  height: calc(100vh - 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+  font-family: Manrope;
+  font-size: 0.7em;
+  h3 {
+    font-size: 1em;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rightBarContainer {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    img {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .suggestions {
+      margin: 1rem 0 1rem 0;
+      width: 100%;
+      border-radius: 0.3rem;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      .headerSuggestion {
+        width: 100%;
+        h3 {
+          font-family: Lexend;
+          padding: 0.5rem;
+          color: gray;
+        }
+      }
+      .suggestionContent {
+        font-family: Manrope;
+
+        padding: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .leftSuggestions {
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 0.5rem;
+          img {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+          }
+          h3 {
+            padding: 0.5rem;
+            font-family: Manrope;
+          }
+        }
+        .rightSuggestions {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 0.5rem;
+          button {
+            border-radius: 0.2rem;
+            color: white;
+            border: none;
+            padding: 0.3rem;
+            cursor: pointer;
+          }
+          .follow {
+            background-color: #4bbdffff;
+          }
+          .dismiss {
+            background-color: #6d31edff;
+          }
+        }
+      }
+    }
+    .latestActivities {
+      width: 100%;
+      margin: 1rem 0 1rem 0;
+      border-radius: 0.3rem;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      .headerActivities {
+        width: 100%;
+        h3 {
+          font-family: Lexend;
+          padding: 0.5rem;
+          color: gray;
+        }
+      }
+      .activitiesContent {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        .leftActivities {
+          flex: 5;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 0.5rem;
+          width: 100%;
+          img {
+          }
+          h3 {
+            padding: 0.5rem;
+            font-family: Manrope;
+          }
+          p {
+          }
+        }
+        .rightActivities {
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          width: 100%;
+          span {
+          }
+        }
+      }
+    }
+    .onlineFriends {
+      width: 100%;
+      margin: 1rem 0 1rem 0;
+      border-radius: 0.3rem;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .onlineHeader {
+        width: 100%;
+        h3 {
+          font-family: Lexend;
+          padding: 0.5rem;
+          color: gray;
+        }
+      }
+      .onlineContent {
+        padding: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .onlineUserIcon {
+          position: relative;
+          img {
+          }
+        }
+        .onlineUserIcon::after {
+          position: absolute;
+          top: 0;
+          right: -0.2rem;
+          border-radius: 50%;
+          content: "";
+          width: 0.7rem;
+          height: 0.7rem;
+          background-color: limegreen;
+        }
+        h3 {
+          padding: 0.5rem;
+          font-family: Manrope;
+        }
+      }
+    }
+  }
+}
+
+.dark .rightBar {
+  color: white;
+}
+
+.dark #rightBar {
+  background-color: rgb(83, 83, 83);
+}
+
+.dark #suggestion {
+  background-color: rgb(70, 69, 69);
+}
+
+.dark #latestActivities {
+  background-color: rgb(70, 69, 69);
+}
+
+.dark #onlineFriends {
+  background-color: rgb(70, 69, 69);
+}

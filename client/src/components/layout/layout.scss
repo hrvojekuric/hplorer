@@ -1,0 +1,50 @@
+@import "../../style.scss";
+
+.layoutTop {
+  display: flex;
+  flex-direction: column;
+
+  .layoutBottom {
+    width: 100%;
+    display: flex;
+
+    .leftBar {
+      flex: 1;
+
+      @include tablet {
+        display: none;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .outlet {
+      background-color: rgb(228, 222, 222);
+      flex: 3;
+      height: calc(100vh - 4rem);
+      overflow: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .rightBar {
+      flex: 1.5;
+
+      @include tablet {
+        display: none;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+}
+
+.dark #outline {
+  background-color: rgb(83, 83, 83);
+}

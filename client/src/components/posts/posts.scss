@@ -1,0 +1,10 @@
+.posts {
+  background-color: rgb(228, 222, 222);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.dark .posts {
+  background-color: rgb(83, 83, 83);
+}

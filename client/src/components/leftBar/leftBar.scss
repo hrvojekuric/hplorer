@@ -1,0 +1,116 @@
+@import "../../app.scss";
+
+.leftBar {
+  font-family: Manrope;
+  font-size: 0.8em;
+  img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+  }
+  span {
+  }
+  .item {
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  height: calc(100vh - 4rem);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .container {
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .important {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      border-bottom: 1px solid #15abffff;
+      padding: 0.5rem;
+      .user {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        gap: 0.5rem;
+        cursor: pointer;
+        font-weight: bold;
+        img {
+          border-radius: 50%;
+        }
+        span {
+        }
+      }
+      .item {
+        img {
+        }
+        span {
+        }
+      }
+    }
+    .shortcuts {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 0.5rem;
+      border-bottom: 1px solid #15abffff;
+      .yourShortcuts {
+        font-weight: bold;
+      }
+      span {
+        padding: 0.5rem;
+      }
+      .item {
+        img {
+        }
+        span {
+        }
+      }
+    }
+    .others {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 0.5rem;
+      .others {
+        font-weight: bold;
+      }
+      span {
+      }
+      .item {
+        img {
+        }
+        span {
+        }
+      }
+    }
+  }
+}
+
+.dark .leftBar {
+  background-color: rgb(70, 69, 69);
+  color: white;
+}

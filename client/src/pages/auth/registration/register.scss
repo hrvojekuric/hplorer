@@ -1,0 +1,199 @@
+@import "../../../style.scss";
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+
+    .bottom {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      @include tablet {
+        align-items: start;
+      }
+      @include mobile {
+        align-items: flex-start;
+      }
+
+      .welcomePart {
+        gap: 1rem;
+        @include tablet {
+          display: none;
+        }
+        @include mobile {
+          display: none;
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .welcomeLeft {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 5rem;
+            height: 5rem;
+          }
+          span {
+            display: block;
+            width: 6rem;
+            height: 0.5rem;
+            background-color: #15abffff;
+            border-radius: 0.3rem;
+          }
+        }
+        .welcomeRight {
+          font-weight: 400;
+          h2 {
+            line-height: 2em;
+            font-size: 2em;
+            color: #9095a1ff;
+            font-family: Lexend;
+          }
+          p {
+            font-size: 1em;
+            font-weight: 400;
+            line-height: 2em;
+            color: #9095a1ff;
+            font-family: "Manrope";
+          }
+        }
+      }
+      .registerPart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .innerContainer {
+          padding: 2rem;
+          width: 30rem;
+          height: 35rem;
+          border-radius: 0.3rem;
+          border-width: 0.1rem;
+          border-color: #4bbdffff;
+          border-style: solid;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+          @include mobile {
+            border: none;
+            padding: 0;
+            width: 100%;
+          }
+
+          .registerHeading {
+            h2 {
+              font-family: Lexend;
+              font-size: 2em;
+              font-weight: 700;
+              line-height: 1em;
+              color: #171a1fff;
+              text-align: center;
+            }
+          }
+          .registerForm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            .inputLabel {
+              position: relative;
+              margin-top: 1rem;
+              width: 100%;
+              label {
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                padding: 0.25rem 0.5rem;
+                font-size: 0.7em;
+                font-weight: 700;
+              }
+              input {
+                width: 100%;
+                height: 3.5rem;
+                padding-left: 1em;
+                padding-right: 1em;
+                font-family: Manrope;
+                font-size: 1em;
+                font-weight: 400;
+                line-height: 1em;
+                background: #f3f4f6ff;
+                border-radius: 0.1rem;
+                border-width: 0;
+                outline: none;
+              }
+            }
+            button {
+              cursor: pointer;
+              width: 100%;
+              height: 3.5rem;
+              margin-top: 1rem;
+              font-size: 1em;
+              font-weight: 400;
+              line-height: 1.5em;
+              color: #ffffffff;
+              background: #6d31edff;
+              border: none;
+              border-radius: 0.1rem;
+              box-shadow: 0rem 0.1rem 1rem #6d31ed, 0rem 0rem 0.1rem #6d31ed;
+              font-family: Manrope;
+            }
+          }
+          .signUpOptions {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            p {
+              margin-bottom: 1rem;
+              font-family: Manrope;
+              font-size: 1em;
+              font-weight: 400;
+              line-height: 1em;
+              color: #323743ff;
+            }
+            .signUpIcons {
+              width: 100%;
+              display: flex;
+              justify-content: space-evenly;
+
+              button {
+                border: none;
+                cursor: pointer;
+                background: #fef1f1ff;
+                width: 5rem;
+                height: 3rem;
+                border-radius: 0.4rem;
+
+                img {
+                  width: 2rem;
+                  height: 2rem;
+                }
+                #facebook {
+                  width: 2.5rem;
+                  height: 2.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

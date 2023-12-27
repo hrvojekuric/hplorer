@@ -1,0 +1,71 @@
+@import "../../style.scss";
+
+.comments {
+  img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .write {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1rem 0;
+
+    input {
+      border: none;
+      outline: none;
+      padding: 1rem;
+      flex: 5;
+      border: 1px solid lightgray;
+      background-color: transparent;
+    }
+
+    input::placeholder {
+      font-family: Manrope;
+    }
+
+    button {
+      border: none;
+      background-color: #5271ff;
+      color: white;
+      padding: 1rem;
+      cursor: pointer;
+      border-radius: 0.2rem;
+      font-family: Manrope;
+    }
+  }
+
+  .comment {
+    margin: 2rem 0px;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .info {
+      flex: 5;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      align-items: flex-start;
+
+      span {
+        font-weight: 500;
+        font-family: Lexend;
+      }
+
+      p {
+      }
+    }
+
+    .date {
+      flex: 1;
+      align-self: center;
+      color: gray;
+      font-size: 0.8em;
+    }
+  }
+}
