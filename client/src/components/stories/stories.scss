@@ -6,13 +6,10 @@
   font-family: Lexend;
 
   @include mobile {
-    height: 3rem;
-    margin-bottom: 0;
     justify-content: space-between;
   }
 
   @include tablet {
-    height: 15rem;
     gap: 1rem;
   }
 

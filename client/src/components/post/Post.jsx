@@ -18,7 +18,7 @@ const Post = ({ post }) => {
       <div className="postContainer">
         <div className="user">
           <div className="userInfo">
-            <img src={post.profilePic} alt="" />
+            <img src={post.profilePic} alt="profile picture" />
             <div className="details">
               <Link
                 to={`/profile/${post.userId}`}
@@ -33,7 +33,7 @@ const Post = ({ post }) => {
         </div>
         <div className="content">
           <p>{post.desc}</p>
-          <img src={post.img} alt="" />
+          <img src={post.img} alt="post image" />
         </div>
         <div className="info">
           <div className="item">
