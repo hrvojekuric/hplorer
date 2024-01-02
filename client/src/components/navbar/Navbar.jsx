@@ -7,15 +7,30 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import LogoutIcon from "@mui/icons-material/Logout";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ModeContext } from "../context/MainContext";
 import { AuthContext } from "../context/MainContext";
 import logo from "../../assets/logo.svg";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const { toggle, darkMode } = useContext(ModeContext);
   const { currentUser } = useContext(AuthContext);
+  const [err, setErr] = useState(null);
+
+  const navigate = useNavigate();
+
+  const logout = async () => {
+    try {
+      await axios.post("http://localhost:8800/api/auth/logout");
+      navigate("/login");
+    } catch (err) {
+      setErr(err.response.data);
+    }
+  };
 
   return (
     <div className="navbar ">
@@ -40,6 +55,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="right">
+        <LogoutIcon onClick={logout} style={{ cursor: "pointer" }} />
         <PersonOutlinedIcon id="icon" />
         <EmailOutlinedIcon id="icon" />
         <NotificationsOutlinedIcon id="icon" />

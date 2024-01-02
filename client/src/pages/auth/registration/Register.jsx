@@ -3,8 +3,36 @@ import google from "../../../assets/google.svg";
 import meta from "../../../assets/facebook.svg";
 import email from "../../../assets/email.svg";
 import "./register.scss";
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const [inputs, setInputs] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+  });
+
+  const navigate = useNavigate();
+  const [err, setErr] = useState(null);
+
+  const handleChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:8800/api/auth/register", inputs);
+      navigate("/");
+    } catch (err) {
+      setErr(err.response.data);
+    }
+  };
+
+  console.log(err);
+
   return (
     <main className="register">
       <div className="container">
@@ -30,12 +58,18 @@ const Register = () => {
                 className="registerForm"
               >
                 <div className="inputLabel">
-                  <label htmlFor="username">Full name</label>
-                  <input name="username" placeholder="John Doe" type="text" />
+                  <label htmlFor="fullName">Full name</label>
+                  <input
+                    onChange={handleChange}
+                    name="fullName"
+                    placeholder="John Doe"
+                    type="text"
+                  />
                 </div>
                 <div className="inputLabel">
                   <label htmlFor="email">Email</label>
                   <input
+                    onChange={handleChange}
                     name="email"
                     placeholder="example.email@gmail.com"
                     type="email"
@@ -44,6 +78,7 @@ const Register = () => {
                 <div className="inputLabel">
                   <label htmlFor="password">Password</label>
                   <input
+                    onChange={handleChange}
                     name="password"
                     placeholder="Enter at least 8 characters"
                     minLength={8}
@@ -52,8 +87,7 @@ const Register = () => {
                     type="password"
                   />
                 </div>
-
-                <button>Sign up</button>
+                <button onClick={handleRegister}>Sign up</button>
               </form>
               <div className="signUpOptions">
                 <p>Or sign up with</p>
@@ -70,9 +104,16 @@ const Register = () => {
                   </button>
                 </div>
               </div>
+              <p>Already have an account?</p>
+              <a href="/login">Sign in</a>
             </div>
           </div>
         </div>
+        {err && (
+          <p style={{ color: "red", padding: "1rem", fontWeight: "bold" }}>
+            {err}
+          </p>
+        )}
       </div>
     </main>
   );
